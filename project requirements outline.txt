@@ -1,0 +1,56 @@
+large scale requirements
+
+-DB to store prop items
+-searchable registry of items
+-notification system
+-registration system for users/institutions
+-registration system for items
+-messaging system - forum style or IM style?
+-calendar - should be specific to each item?
+-payment system? paypal?
+
+
+Pages:
+
+-Landing Page
+	- link to product search
+	- link to user profile
+	- 
+
+-Product Search Page
+	- advanced search options
+	- display results
+	- 
+
+-user registration page
+	- Simple page to register user to user DB table
+	- take down all pertinent user information
+	- 
+
+-user profile page
+	- display items available, reputation?, location, contact info 
+	- register individual users vs institutions?
+	- 
+
+-product registration page
+	- simple page to insert item to item DB table
+	- take in all pertinent item information
+	- 
+
+-product booking page
+	- template page is dynamically populated based on item user selects
+	- arrange for transport, dates in and out
+	- 
+
+-forum page?
+	- craiglist style ask/offer system?
+	- not primary functionality, used for cases where desired item does not exist in database
+	- 
+
+-calendar page
+	- page dynamically populated depending on user/item?
+	- 
+	- 
+
+-
+
