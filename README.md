@@ -1,10 +1,101 @@
-Project Proposal: Prop Sharing
+Yii 2 Basic Project Template
+============================
 
-Description:
+Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
+rapidly creating small projects.
 
-We want to build a platform that will allow Theatre departments and commercial troupes to lend, exchange, and rent props. Today, these institutions rely on word of mouth and outdated forums to exchange props, and have no common platform for doing so. Users will be able to add their props and view other institutions’ props. The use of a searchable database and pictures combined with textual descriptions will allow theatres to find the right props and to make the deals necessary to use them. When a user finds a prop that they want to use, they will click a button on that prop’s page. This will generate a notification for the owner of the prop (or place the user on a waiting list if the prop is already in use), who can then choose to respond via in app messaging system or any other form of communication given by the requester, such as by email or phone. There will be a shared calendar system that will be refineable by settings like: location, week, month, year, decade of play, or set locations. There will be a consolidated list of props, that will be searchable and can be refined in several ways. Users will be able to choose to view props only from a certain decade or in a certain category, like clothing or furniture.
+The template contains the basic features including user login/logout and a contact page.
+It includes all commonly used configurations that would allow you to focus on adding new
+features to your application.
+
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-basic/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
+[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-basic/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-basic)
+[![Build Status](https://travis-ci.org/yiisoft/yii2-app-basic.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-basic)
+
+DIRECTORY STRUCTURE
+-------------------
+
+      assets/             contains assets definition
+      commands/           contains console commands (controllers)
+      config/             contains application configurations
+      controllers/        contains Web controller classes
+      mail/               contains view files for e-mails
+      models/             contains model classes
+      runtime/            contains files generated during runtime
+      tests/              contains various tests for the basic application
+      vendor/             contains dependent 3rd-party packages
+      views/              contains view files for the Web application
+      web/                contains the entry script and Web resources
 
 
-Technologies:
 
-We will be using the framework Yii. This will make implementing the database much easier, and provide a template for our frontend. Yii is a PHP based framework, so the majority of the backend will be on PHP. Ajax and JSON will be used to provide asynchronous functionality. HTML5, CSS3, and JavaScript will be used for the frontend and responsiveness. The backend will be connected to a MySQL database. For monetary transactions, we will be using PayPal.
+REQUIREMENTS
+------------
+
+The minimum requirement by this project template that your Web server supports PHP 5.4.0.
+
+
+INSTALLATION
+------------
+
+### Install from an Archive File
+
+Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
+a directory named `basic` that is directly under the Web root.
+
+Set cookie validation key in `config/web.php` file to some random secret string:
+
+```php
+'request' => [
+    // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+    'cookieValidationKey' => '<secret random string goes here>',
+],
+```
+
+You can then access the application through the following URL:
+
+~~~
+http://localhost/basic/web/
+~~~
+
+
+### Install via Composer
+
+If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
+at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+
+You can then install this project template using the following command:
+
+~~~
+php composer.phar global require "fxp/composer-asset-plugin:~1.0.0"
+php composer.phar create-project --prefer-dist --stability=dev yiisoft/yii2-app-basic basic
+~~~
+
+Now you should be able to access the application through the following URL, assuming `basic` is the directory
+directly under the Web root.
+
+~~~
+http://localhost/basic/web/
+~~~
+
+
+CONFIGURATION
+-------------
+
+### Database
+
+Edit the file `config/db.php` with real data, for example:
+
+```php
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'username' => 'root',
+    'password' => '1234',
+    'charset' => 'utf8',
+];
+```
+
+**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
+
+Also check and edit the other files in the `config/` directory to customize your application.
