@@ -43,7 +43,7 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'CPS530 Project',
+        'brandLabel' => 'PropUp',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -53,12 +53,10 @@ AppAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Installation', 'url' => ['/site/installation']],
-            ['label' => 'How-to', 'url' => ['/site/howto']],
-            ['label' => 'Actual page', 'url'=>['/movie/index']],
-            ['label' => 'Conclusion', 'url' => ['/site/conclusion']],
-            ['label' => 'About us', 'url' => ['/site/about']],
-
+            ['label' => 'Login', 'url' => ['/site/login']],
+            ['label' => 'View', 'url' => ['/site/view']],
+            ['label' => 'Calendar', 'url'=>['/site/calendar']],
+            ['label' => 'About us', 'url' => ['/site/aboutus']],
         ],
     ]);
     NavBar::end();
@@ -74,7 +72,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; CPS530 Group MICE <?= date('Y') ?></p>
+        <p class="pull-left">&copy; CPS630 <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>

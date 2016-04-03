@@ -87,22 +87,18 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionInstallation()
+    public function actionView()
     {
-      return $this->render('installation');
+      return $this->render('view');
     }
 
-    public function actionHowto()
+    public function actionCalendar()
     {
-      return $this->render('howto');
+      return $this->render('calendar');
     }
 
-    public function actionConclusion(){
-      return $this->render('conclusion');
-    }
-
-    public function actionAbout()
+    public function actionAboutus()
     {
-        return $this->render('about');
+        return $this->render('aboutus');
     }
 }
