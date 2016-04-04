@@ -1,7 +1,4 @@
 html;
-body {
-  height: 100%;
-}
 
 td > img{
   width:200px;
@@ -42,7 +39,6 @@ a.btn.btn-success{
   height: auto;
   margin: 0 auto -60px;
   padding: 0 0 60px;
-  background-color: #FFFFFF;
   font-family: specialFont;
   font-size: 140%;
 }
@@ -52,10 +48,13 @@ a.btn.btn-success{
 }
 
 .footer {
-  height: 60px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #ddd;
-  padding-top: 20px;
+    height: 30px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 7px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .jumbotron {
@@ -147,7 +146,7 @@ html, body {
 
 body {
   margin:0;
-  background:#14b5d1;
+  background: lightgrey;
   font-size:1.3em;
   color:#333;
 }
@@ -283,4 +282,112 @@ p, li,figcaption,a {
 p a {
   color:#14b5d1;
   text-decoration:none;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+.right {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	-webkit-appearance: none;
+}
+
+/*The LOGIN ID*/
+
+#login {
+	margin: 50px auto 50px auto; 
+	width: 400px;
+}
+
+#login div
+{
+	padding: 0px 26px;
+	margin: 0;  
+	border-style:solid;
+	border-width:1px;
+}
+
+#login .login_header 
+{
+	padding: 0px 26px;
+	margin: 0;  
+	border-style:dashed;
+	border-width:1px;
+	background: lightgrey;
+	border-radius: 20px 20px 0 0;
+}
+
+#login h2
+{
+	font-size: 28px;
+}
+
+#login .login_footer 
+{
+	padding: 20px 26px;
+	margin: 0;  
+	border-style:dashed;
+	border-width:1px;
+	background: #fff;
+	border-radius: 0 0 20px 20px;
+}
+
+#login div p {
+	color: #777;
+	margin-bottom: 14px;
+}
+
+#login div p:last-child {
+	margin-bottom: 0;
+}
+
+#login div input {
+	border-radius: 3px;
+}
+
+#login div input[type="email"], #login div input[type="password"] {
+	background: #eee;
+	color: #777;
+	padding: 4px 10px;
+	width: 328px;
+}
+
+#login div input[type="submit"] {
+	background: #33cc77;
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	padding: 4px 0;
+	width: 100px;
+}
+
+#login div input[type="submit"]:hover {
+	background: #28ad63;
+}
+
+body {
+	height: 100%;
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
 }
