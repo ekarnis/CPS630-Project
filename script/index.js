@@ -110,10 +110,58 @@
 		 var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(lat, lon),
 			map: map,
-			title: title
+			title: title,
 		});
 
 		markers.push(marker);
+	}
+
+	function add_instituition_marker(lat, lon, title){
+		 var marker = new google.maps.Marker({
+			position: new google.maps.LatLng(lat, lon),
+			map: map,
+			title: title,
+			icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'
+		});
+
+		markers.push(marker);
+	}
+
+	function populateInstituitions(){
+		var instituition_list = [];
+			//Hardcoded until we can add the geolocations of instituitions via SQL
+			instituition_list.push({
+				lat: 43.6577,
+				lon: -79.3788,
+				title: "Ryerson University"
+			});
+			instituition_list.push({
+				lat: 43.6629,
+				lon: -79.3957,
+				title: "University of Toronto"
+			});
+			instituition_list.push({
+				lat: 43.6629,
+				lon: -79.3957,
+				title: "University of Toronto"
+			});
+			instituition_list.push({
+				lat: 44.4120,
+				lon: -79.6678,
+				title: "Georgian College"
+			});
+			instituition_list.push({
+				lat: 43.6761,
+				lon: -79.4105,
+				title: "George Brown"
+			});
+			instituition_list.push({
+				lat: 43.6530,
+				lon: -79.3914,
+				title: "OCAD University"
+			});
+
+		for(count = 0; count < instituition_list.length; count++) add_instituition_marker(instituition_list[count].lat, instituition_list[count].lon, instituition_list[count].title);
 	}
 
 	$(document).ready(function(){
@@ -147,6 +195,7 @@
 			map = new google.maps.Map(document.getElementById("map"), myOptions);
 
 			addMarker(currentLocation.lat, currentLocation.lon, "Your Location! Cool :)");
+			populateInstituitions();
 		}
 
 		google.maps.event.addDomListener(window, "load", initialize);
@@ -158,6 +207,7 @@
 		$("#append-to-div").html("");
 
 		//Delete all markers
+		//this is not useful if we want to have instituitions in the same array
 	    for (var i = 0; i < markers.length; i++) {
 			markers[i].setMap(null);
 		}
