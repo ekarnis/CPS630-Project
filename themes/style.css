@@ -1,22 +1,22 @@
 
-h2 { 
-	color: black; 
-	font-family: 'Raleway',sans-serif; 
-	font-size: 22px; 
-	font-weight: 800; 
+h2 {
+	color: black;
+	font-family: 'Raleway',sans-serif;
+	font-size: 22px;
+	font-weight: 800;
 	line-height: 26px;
-	text-align: center; 
+	text-align: center;
 	margin: 0;
 	margin-bottom: 5px;
 }
 
 
-p { 
-	color: darkgrey; 
+p {
+	color: darkgrey;
 	font-family: 'Raleway',sans-serif;
 	font-size: 18px;
-	font-weight: 500; 
-	line-height: 26px; 
+	font-weight: 500;
+	line-height: 26px;
 }
 
 
@@ -43,7 +43,7 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
 .label{
 	display: block !important;
 	margin: 10px !important;
-    padding: 5px !important;
+	padding: 5px !important;
 }
 
 .hidden{
@@ -51,8 +51,9 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
 }
 
 body {
-    background-image: url("../img/curtains.jpg");
-    background-color: #cccccc;
+	/*background-image: url("../img/curtains.jpg");
+	background-color: #cccccc;*/
+	background-color: white;
 }
 
 nav{
@@ -66,8 +67,8 @@ main.container{
 
 header nav .container{
 	background-color: brown;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 main.container{
@@ -80,19 +81,19 @@ article{
 
 .formattedTextBox {
 	width: 98%;
-    border: 1px solid black;
-    min-height: 10px;
-    padding: 10px;
-    margin: 10px 1% 10px 1%;
+	border: 1px solid black;
+	min-height: 10px;
+	padding: 10px;
+	margin: 10px 1% 10px 1%;
 }
 
 /* added by Isaac */
 .searchedTextBox{
 	width: 80%;
-		border: 1px solid black;
-		min-height: 10px;
-		padding: 10px;
-		margin: 10px 1% 10px 1%;
+	border: 1px solid black;
+	min-height: 10px;
+	padding: 10px;
+	margin: 10px 1% 10px 1%;
 }
 
 .table-striped{
@@ -104,19 +105,19 @@ article{
 
 .leftButton {
 	margin: 5px !important;
-    width: 100% !important;
-    margin-left: 0 !important;
+	width: 100% !important;
+	margin-left: 0 !important;
 }
 
 .rightButton{
 	margin: 5px !important;
-    width: 100% !important;
-    margin-right: 0 !important;
+	width: 100% !important;
+	margin-right: 0 !important;
 }
 
 .centeredButton{
 	margin-top: 5px;
-    width: 100% !important;
+	width: 100% !important;
 }
 
 .row10px{
@@ -126,27 +127,27 @@ article{
 
 
 * {
-    box-sizing: border-box !important;
+	box-sizing: border-box !important;
 }
 
 #textbox{
 	width: 98%;
-    border: 1px solid black;
-    min-height: 100px;
-    padding: 10px;
-    margin: 10px 1% 10px 1%;
+	border: 1px solid black;
+	min-height: 100px;
+	padding: 10px;
+	margin: 10px 1% 10px 1%;
 }
 
 #map{
 	width: 98%;
-    border: 1px solid black;
-    min-height: 500px;
-    padding: 10px;
-    margin: 10px 1% 10px 1%;
+	border: 1px solid black;
+	min-height: 500px;
+	padding: 10px;
+	margin: 10px 1% 10px 1%;
 }
 
 body{
-	background-color: lightblue;
+	background-color: white;
 	text-align: center;
 	padding: 15px;
 }
@@ -173,7 +174,7 @@ figure{
 }
 
 ul{
-	 list-style-type: none;
+	list-style-type: none;
 }
 
 .left{
@@ -215,8 +216,8 @@ figure img{
 
 table{
 	margin: auto;
-  border: 1px solid black;
-  margin-top: 15px;
+	border: 1px solid black;
+	margin-top: 15px;
 	margin-bottom: 10px;
 }
 
