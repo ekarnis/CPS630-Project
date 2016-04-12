@@ -18,10 +18,14 @@
 
 	$inventoryCount=0;
 	//Fetch the line information
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     //check if $GET_ is set to avoid undefined index error
 	if(isset($_GET['searchitem']))
 	{
-        $var = $_GET['searchitem'];
+    $var = $_GET['searchitem'];
 		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item WHERE Name LIKE". '"' . $var. '%"';
 	}
 	else
@@ -57,21 +61,21 @@
 						echo "<div class='item-header'>";
 							echo "<h2>". $name[$x]."</h2>";
 						echo "</div>";
-						
+
 						echo "<div class='item-description'>";
 							echo "<p>". $description[$x]."</p>";
 							echo "<p>". $price[$x]."</p>";
-						
+
 							echo '
 									<button type="button" class="btn btn-primary">Request Item</button>
 									<button type="button" class="btn btn-primary">Report</button>
 								';
-						echo "</div>";	
+						echo "</div>";
 					echo "</div>";
 				echo "</div>";
 			}
 ?>
-		
+
 		</div>
 	</article>
 </main>

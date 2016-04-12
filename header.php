@@ -71,13 +71,13 @@ if ($result)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">PropUp</a>
+                    <a class="navbar-brand" href="../PropSwap/#">PropSwap</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<!-- lEFT SIDE -->
                     <ul class="nav navbar-nav">
-                        <li><a href="inventory.php">Inventory</a></li>
+                        <li><a href="inventory.php">Find an Item</a></li>
                     </ul>
 
 					<!-- RIGHT SIDE -->
