@@ -18,7 +18,6 @@
 
 	$inventoryCount=0;
 	//Fetch the line information
-    
     //check if $GET_ is set to avoid undefined index error
 	if(isset($_GET['searchitem']))
 	{

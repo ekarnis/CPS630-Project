@@ -8,24 +8,24 @@
 	$dbname = "cps630";
 
 	//Connecting to your database
-	mysql_connect($hostname, $username, $password) OR DIE ("Unable to connect to database! Please try again later.");
-	mysql_select_db($dbname);
+	$conn = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Unable to connect to database! Please try again later.");
+	//mysql_select_db($dbname);
 
 	//Set Charset to UTF9
-	mysql_query("SET NAMES 'utf8'");
-	mysql_query("SET CHARACTER SET utf8");
-	mysql_query("SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
+	mysqli_query($conn, "SET NAMES 'utf8'");
+	mysqli_query($conn, "SET CHARACTER SET utf8");
+	mysqli_query($conn, "SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
 
 	//Fetch the line information
-	$var = $_GET['searchitem'];
+	//$var = $_GET['searchitem'];
 
 	$query = "SELECT i.`Key`, i.Name FROM `Institution` i;";
 
 	$uniCount=0;
-	$result = mysql_query($query);
+	$result = mysqli_query($conn, $query);
 	if ($result)
 	{
-		while($row = mysql_fetch_array($result))
+		while($row = mysqli_fetch_array($result))
 		{
 			$uniName[$uniCount]		=	 $row["Name"];
 			$uniKey[$uniCount]		=	 $row["Key"];
