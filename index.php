@@ -5,7 +5,7 @@
 
     <main class="container" id="link_1">
         <article class="xl-12 lg-12 md-12 sm-12">
-			<textarea id="textbox" rows="4" cols="50" placeholder="Please past your coordinates here"></textarea>
+			<textarea id="textbox" rows="4" cols="50" placeholder="Please past your coordinates here, formatted: '12.123456, -98.123456', etc"></textarea>
 			<div id="error-div">
 			</div>
 

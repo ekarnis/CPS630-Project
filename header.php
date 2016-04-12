@@ -10,24 +10,24 @@ $password = "DontEat123!";
 $dbname = "cps630";
 
 //Connecting to your database
-mysql_connect($hostname, $username, $password) OR DIE ("Unable to connect to database! Please try again later.");
-mysql_select_db($dbname);
+$conn = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Unable to connect to database! Please try again later.");
+//mysqli_select_db($dbname);
 
 //Set Charset to UTF9
-mysql_query("SET NAMES 'utf8'");
-mysql_query("SET CHARACTER SET utf8");
-mysql_query("SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
+mysqli_query($conn, "SET NAMES 'utf8'");
+mysqli_query($conn, "SET CHARACTER SET utf8");
+mysqli_query($conn, "SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
 
 //Fetch the line information
 $query = "Select User_Id, Login as 'username', Pass from Login";
 
-$result = mysql_query($query);
+$result = mysqli_query($conn, $query);
 
 
 $headerCount=0;
 if ($result)
 {
-	while($row = mysql_fetch_array($result))
+	while($row = mysqli_fetch_array($result))
 	{
 		$userId[$headerCount]			=  $row["User_Id"];
 		$usernames[$headerCount] 	=	 $row["username"];
