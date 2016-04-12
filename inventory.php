@@ -23,8 +23,8 @@
 	{
     $var = $_GET['searchitem'];
 		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item 
-        WHERE (Name LIKE '". $var . "' '". "%" . "')
-        OR (Description LIKE '". $var . "' '". "%" . "')";
+        WHERE (Name LIKE '". "%" . "' '". $var . "' '". "%" . "')
+        OR (Description LIKE '". "%" . "' '". $var . "' '". "%" . "')";
 	}
 	else
 	{
