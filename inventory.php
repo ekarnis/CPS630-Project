@@ -8,30 +8,31 @@
 	$dbname = "cps630";
 
 	//Connecting to your database
-	mysql_connect($hostname, $username, $password) OR DIE ("Unable to connect to database! Please try again later.");
-	mysql_select_db($dbname);
+	$conn = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Unable to connect to database! Please try again later.");
+	//mysql_select_db($dbname);
 
 	//Set Charset to UTF9
-	mysql_query("SET NAMES 'utf8'");
-	mysql_query("SET CHARACTER SET utf8");
-	mysql_query("SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
+	mysqli_query($conn, "SET NAMES 'utf8'");
+	mysqli_query($conn, "SET CHARACTER SET utf8");
+	mysqli_query($conn, "SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
 
 	$inventoryCount=0;
 	//Fetch the line information
-	$var = $_GET['searchitem'];
-
-	if($var != "")
+    
+    //check if $GET_ is set to avoid undefined index error
+	if(isset($_GET['searchitem']))
 	{
+        $var = $_GET['searchitem'];
 		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item WHERE Name LIKE". '"' . $var. '%"';
 	}
 	else
 	{
 		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item";
 	}
-	$result = mysql_query($query);
+	$result = mysqli_query($conn, $query);
 	if ($result)
 	{
-		while($row = mysql_fetch_array($result))
+		while($row = mysqli_fetch_array($result))
 		{
 			$name[$inventoryCount]				=	 $row["Name"];
 			$description[$inventoryCount]	=	 $row["Description"];
