@@ -46,7 +46,7 @@ if ($result)
 	<meta name="description" content="PropUp">
 	<meta name="keywords" content="">
 	<meta name="author" content="Eli Liberzon">
-	<title>Prop Up</title>
+	<title>Prop Swap</title>
 
 	<!-- Google Hosted jQuery -->
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>

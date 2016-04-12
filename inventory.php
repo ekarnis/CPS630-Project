@@ -22,7 +22,9 @@
 	if(isset($_GET['searchitem']))
 	{
     $var = $_GET['searchitem'];
-		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item WHERE Name LIKE". '"' . $var. '%"';
+		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item 
+        WHERE (Name LIKE '". $var . "' '". "%" . "')
+        OR (Description LIKE '". $var . "' '". "%" . "')";
 	}
 	else
 	{
@@ -33,9 +35,9 @@
 	{
 		while($row = mysqli_fetch_array($result))
 		{
-			$name[$inventoryCount]				=	 $row["Name"];
-			$description[$inventoryCount]	=	 $row["Description"];
-			$price[$inventoryCount]			  =  $row["Price"];
+			$name[$inventoryCount]			= $row["Name"];
+			$description[$inventoryCount]	= $row["Description"];
+			$price[$inventoryCount]			= "$".$row["Price"];
 			$inventoryCount++;
 		}
 	}
@@ -46,8 +48,17 @@
 		<form>
 			<input type="textbox" name="searchitem" class="searchedTextBox" placeholder="Search Item...">
 			<button type="submit" class="btn btn-default" onclick="searchItem">Search</button>
-		</from>
-
+		</form>
+        <form align="right">
+            <select name="sortby">
+                <option selected="selected">Sort Results By...</option>
+                <option value="bynameasc">By Name Ascending</option>
+                <option value="bynamedesc">By Name Descending</option>
+                <option value="bypricedesc">By Price High-Low</option>
+                <option value="bypriceasc">By Price Low-High</option>
+            </select>
+            <input type="submit">
+        </form>
 		<div class="row">
 <?php
 			for ( $x = 0; $x < $inventoryCount; $x++)
