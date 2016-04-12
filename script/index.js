@@ -12,6 +12,7 @@
 	var map;
 	var markers = [];
 	var institution_markers = [];
+	var table_count = 0;
 
 	function superduperformulafordistance(point1, point2){
 		function toRad(x) {
@@ -45,7 +46,7 @@
 
 		  geocoder.geocode({'location': latlng}, function(results, status) {
 			if (status === google.maps.GeocoderStatus.OK) {
-			  if (results[1]) {
+			  if (results[1] && table_count == 0) {
 //				return results[1].formatted_address;
 
 				var table = "<table class='distance-table'><tr>";
@@ -59,7 +60,9 @@
 
 				$("#append-to-div").append(table);
 
-			  } else {
+				table_count++;
+
+			} else if (!results[1]) {
 				window.alert('No results found');
 			  }
 			} else {
