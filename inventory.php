@@ -22,13 +22,19 @@
 	if(isset($_GET['searchitem']))
 	{
     $var = $_GET['searchitem'];
-		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item 
+        /*if(isset($_GET['sortby'])) {
+            $sortby = $_GET['sortby'];
+        }
+        else {
+            $sortby = "Name ASC";
+        } */
+		$query = "SELECT user_id, Category_id, Name, Description, Price, Image_Link FROM Item 
         WHERE (Name LIKE '". "%" . "' '". $var . "' '". "%" . "')
         OR (Description LIKE '". "%" . "' '". $var . "' '". "%" . "')";
 	}
 	else
-	{
-		$query = "SELECT user_id, Category_id, Name, Description, Price FROM Item";
+    {
+		$query = "SELECT user_id, Category_id, Name, Description, Price, Image_Link FROM Item";
 	}
 	$result = mysqli_query($conn, $query);
 	if ($result)
@@ -38,9 +44,13 @@
 			$name[$inventoryCount]			= $row["Name"];
 			$description[$inventoryCount]	= $row["Description"];
 			$price[$inventoryCount]			= "$".$row["Price"];
+            $link[$inventoryCount] = $row["Image_Link"];
 			$inventoryCount++;
 		}
 	}
+ /* IMPORTANT: when adding images for each item, the image name that goes into the database should be "item_name",
+ that exactly matches the actual image file saved as "item_name.jpg". Images also must be saved in .jpg form.    
+ */   
 ?>
 <?php include("header.php");?>
 <main class="container" id="link_1">
@@ -49,16 +59,15 @@
 			<input type="textbox" name="searchitem" class="searchedTextBox" placeholder="Search Item...">
 			<button type="submit" class="btn btn-default" onclick="searchItem">Search</button>
 		</form>
-        <form align="right">
-            <select name="sortby">
-                <option selected="selected">Sort Results By...</option>
-                <option value="bynameasc">By Name Ascending</option>
-                <option value="bynamedesc">By Name Descending</option>
-                <option value="bypricedesc">By Price High-Low</option>
-                <option value="bypriceasc">By Price Low-High</option>
+ <!--   <form align="right">
+            <select name="sortby">               
+                <option value="Name DESC">By Name Descending</option>
+                <option value="Name ASC">By Name Ascending</option>
+                <option value="Price DESC">By Price High-Low</option>
+                <option value="Price ASC">By Price Low-High</option>
             </select>
             <input type="submit">
-        </form>
+        </form> -->
 		<div class="row">
 <?php
 			for ( $x = 0; $x < $inventoryCount; $x++)
@@ -72,7 +81,10 @@
 						echo "<div class='item-description'>";
 							echo "<p>". $description[$x]."</p>";
 							echo "<p>". $price[$x]."</p>";
-
+                                
+                                echo "<div class='item-picture'>";
+                                echo "<img src='img/".$link[$x] .".jpg' alt='". $x ."'>";
+                                echo "</div>";
 							echo '
 									<button type="button" class="btn btn-primary">Request Item</button>
 									<button type="button" class="btn btn-primary">Report</button>

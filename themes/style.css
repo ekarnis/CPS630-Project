@@ -36,6 +36,13 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
 	background-color: lightgray;
 }
 
+img{
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+    
+}
+
 .navbar.navbar-inverse.navbar-fixed-top{
 	padding: 0;
 }

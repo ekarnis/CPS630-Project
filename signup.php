@@ -39,7 +39,7 @@ if ($result)
 
 <main class="container" id="link_1">
 	<article class="col-xs-12">
-		<input type="textbox" id="login-username-field" class="formattedTextBox" placeholder="Name"></input>
+		<input type="textbox" id="login-username-field" class="formattedTextBox" placeholder="User Name"></input>
 
 		<br>
 
@@ -47,7 +47,7 @@ if ($result)
 
 		<br>
 
-		<input type="textbox" id="login-name-field" class="formattedTextBox" placeholder="Name"></input>
+		<input type="textbox" id="login-name-field" class="formattedTextBox" placeholder="Real Name"></input>
 
 		<br>
 
