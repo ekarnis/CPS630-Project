@@ -131,19 +131,15 @@ article{
 }
 
 #textbox{
-	width: 98%;
+	width: 100%;
 	border: 1px solid black;
-	min-height: 100px;
-	padding: 10px;
-	margin: 10px 1% 10px 1%;
+	font-size: 3vw;
 }
 
 #map{
-	width: 98%;
+	width: 100%;
 	border: 1px solid black;
 	min-height: 500px;
-	padding: 10px;
-	margin: 10px 1% 10px 1%;
 }
 
 body{
