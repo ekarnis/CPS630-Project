@@ -4,6 +4,7 @@ function initMap() {
   var travel_mode = google.maps.TravelMode.WALKING;
   var map = new google.maps.Map(document.getElementById('map'), {
     mapTypeControl: false,
+    streetViewControl: false,
     center: {	lat: 43.6532,lng: -79.3832},
     zoom: 13
   });
@@ -12,8 +13,6 @@ function initMap() {
   directionsDisplay.setMap(map);
 
   var origin_input = document.getElementById('origin-input');
-
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
 
   var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
   origin_autocomplete.bindTo('bounds', map);

@@ -4,8 +4,7 @@
 
 <main class="container" id="link_1">
   <article>
-    <input id="origin-input" class="controls" type="text"
-        placeholder="Enter an origin location">
+    <input id="origin-input" class="controls" type="text" placeholder="Where are you?">
 
 
     <div id="map"></div>

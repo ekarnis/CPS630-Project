@@ -1,6 +1,6 @@
 
 h2 {
-	color: black;
+	//color: black;
 	font-family: 'Raleway',sans-serif;
 	font-size: 22px;
 	font-weight: 800;
@@ -12,18 +12,12 @@ h2 {
 
 
 p {
-	color: darkgrey;
+	//color: darkgrey;
 	font-family: 'Raleway',sans-serif;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 26px;
 }
-
-
-a { color: darkgrey; text-decoration: underline; }
-
-
-a:hover { color: #1c1c1c; text-decoration: underline; }
 
 .item{
 	margin: 3px;
@@ -33,18 +27,18 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
 }
 
 .item-header{
-	background-color: lightgray;
+	background-color: black;
+	color: white;
+}
+.item-description{
+	text-align: center;
 }
 
 img{
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-    
-}
+	padding: 0 6px;
+	float: left;
+	width: 24.99999%;
 
-.navbar.navbar-inverse.navbar-fixed-top{
-	padding: 0;
 }
 
 .label{
@@ -58,28 +52,32 @@ img{
 }
 
 body {
-	/*background-image: url("../img/curtains.jpg");
-	background-color: #cccccc;*/
 	background-color: white;
 }
 
 nav{
-	background-color: transparent !important;
-	border: 0 !important;
+	background-color: black;
+}
+.navbar{
+	background-color:black;
+}
+.navbar-brand{
+	color: white;
+	font-size: 3vw;
+	font-family: 'Condiment', cursive;
+}
+#origin-input{
+	width: 100%;
 }
 
 main.container{
-	border-radius: 5px;
+		margin-top: 70px;
+		min-height: 90vh;
 }
 
 header nav .container{
-	background-color: brown;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-
-main.container{
-	margin-top: 30px;
+	background-color: black;
+	color: white;
 }
 
 article{
@@ -94,13 +92,14 @@ article{
 	margin: 10px 1% 10px 1%;
 }
 
-/* added by Isaac */
 .searchedTextBox{
 	width: 80%;
-	border: 1px solid black;
-	min-height: 10px;
-	padding: 10px;
-	margin: 10px 1% 10px 1%;
+	min-height: 40px;
+}
+
+.btn{
+	width: 15%;
+	min-height: 40px;
 }
 
 .table-striped{
@@ -137,39 +136,18 @@ article{
 	box-sizing: border-box !important;
 }
 
-#textbox{
-	width: 100%;
-	border: 1px solid black;
-	font-size: 3vw;
-}
-
 #map{
 	width: 100%;
 	border: 1px solid black;
 	min-height: 500px;
 }
 
-body{
-	background-color: white;
-	text-align: center;
-	padding: 15px;
-}
-
-header, footer{
-	padding: 10px;
-}
-
 nav, main, section
 {
 	padding: 10px;
-	background-color: brown;
+	background-color: black;
 }
 
-nav, article{
-	margin-bottom: 10px;
-	padding: 10px;
-	background-color: darkgrey;
-}
 
 figure{
 	background-color: mediumslateblue;
