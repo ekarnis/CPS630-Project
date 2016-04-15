@@ -1,0 +1,321 @@
+.item-price{
+	font-weight: bold;
+}
+
+#origin-input{
+	width: 90%;
+    padding: 5px;
+    margin: 11px;
+    border-radius: 3px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 32px;
+    line-height: 20px;
+	color: white !important;
+	font-family: 'Condiment', cursive;
+	text-decoration: none;
+}
+
+
+.navbar-nav>li>a{
+	text-decoration: none;
+}
+
+input{
+	color: black;
+	border-radius: 3px;
+}
+
+article {
+	backgorund-color: lightgray;
+}
+
+.item-call-now{
+	text-align: center;
+    padding: 6px 5px 0 5px;
+    color: darkslategrey;
+	background-color: lightgray;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin: 7px 3px 2px;
+}
+
+.item-call-now p{
+    color: darkslategrey;
+}
+
+.item-header{
+	background-color: black;
+    border-radius: 3px;
+    margin: 2px;
+    margin-top: 1px;
+}
+
+.item-description{
+	background-color: lightgray;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin: 7px 3px 2px;
+	padding: 5px;
+}
+
+.item-description p{
+    color: darkslategrey;
+}
+
+.item-picture{
+    border-radius: 3px;
+    border-color: black;
+    background-color: black;
+    padding: 3px;
+    margin: 7px 1px 2px;
+}
+
+.item-picture img{
+	width: 100%; 
+	height: 100%;
+}
+
+h2 {
+	color: black;
+	font-family: 'Raleway',sans-serif;
+	font-size: 22px;
+	font-weight: 800;
+	line-height: 26px;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+
+p {
+	color: black;
+	font-family: 'Raleway',sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 26px;
+}
+
+
+a { color: darkgrey; text-decoration: underline; }
+
+
+a:hover { color: #1c1c1c; text-decoration: underline; }
+
+.item{
+	margin: 3px;
+	background-color: white;
+	border: 2px solid black;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+.item-header{
+	background-color: lightgray;
+}
+
+.navbar.navbar-inverse.navbar-fixed-top{
+	padding: 0;
+}
+
+.label{
+	display: block !important;
+	margin: 10px !important;
+    padding: 5px !important;
+}
+
+.hidden{
+	display: none;
+}
+
+body {
+    background-image: url("../img/curtains.jpg");
+    background-color: #cccccc;
+}
+
+nav{
+	background-color: transparent !important;
+	border: 0 !important;
+}
+
+main.container{
+	border-radius: 5px;
+}
+
+header nav .container{
+	background-color:  #660000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+main.container{
+	margin-top: 30px;
+}
+
+article{
+	margin-top: 5px;
+}
+
+.formattedTextBox {
+	width: 98%;
+    border: 1px solid black;
+    min-height: 10px;
+    padding: 10px;
+    margin: 10px 1% 10px 1%;
+}
+
+/* added by Isaac */
+.searchedTextBox{
+	width: 80%;
+		border: 1px solid black;
+		min-height: 10px;
+		padding: 10px;
+		margin: 10px 1% 10px 1%;
+}
+
+.table-striped{
+	background-color:lightgrey;
+	width:100%;
+	border:3px black solid;
+}
+
+#dropZone{
+	background-color: transparent;
+	height:150px;
+	width:600px;
+	padding:0;
+	border: 2px black dashed;
+}
+
+input[type='file'] {
+	width:100%;
+	height:100%;
+}
+
+/* end by Isaac */
+
+.leftButton {
+	margin: 5px !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+.rightButton{
+	margin: 5px !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+}
+
+.centeredButton{
+	margin-top: 5px;
+    width: 100% !important;
+}
+
+.row10px{
+	margin-left: -10px !important;
+	margin-right: -10px !important;
+}
+
+
+* {
+    box-sizing: border-box !important;
+}
+
+#textbox{
+	width: 98%;
+    border: 1px solid black;
+    min-height: 100px;
+    padding: 10px;
+    margin: 10px 1% 10px 1%;
+}
+
+#map{
+	width: 98%;
+    border: 1px solid black;
+    min-height: 500px;
+    padding: 10px;
+    margin: 10px 1% 10px 1%;
+}
+
+body{
+	background-color: lightblue;
+	text-align: center;
+	padding: 15px;
+}
+
+header, footer{
+	padding: 10px;
+}
+
+nav, main, section
+{
+	padding: 10px;
+	background-color:  #660000;
+}
+
+nav, article{
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: darkgrey;
+}
+
+figure{
+	background-color: mediumslateblue;
+	color: white;
+}
+
+ul{
+	 list-style-type: none;
+}
+
+.left{
+	text-align: left;
+	float: left;
+	margin-top: 20px;
+}
+
+.right{
+	text-align: right;
+	float: right;
+	margin-top: 20px;
+}
+
+figure img{
+	padding-top: 10px;
+}
+
+.minHeight300{
+	min-height: 280px !important;
+}
+
+.distance-table{
+	width: 98%;
+	margin: 10px 1% 10px 1%;
+	padding: 10px;
+}
+
+/*The following can be written in one css line, but is more maintainable with various (In case of future changes) */
+.sm-3, .sm-4, .sm-6, .sm-12, .md-3, .md-4, .md-6, .md-12, .lg-3, .lg-4, .lg-6, .lg-12 , .xl-3, .xl-4, .xl-6, .xl-12  {
+	position: relative;
+	min-height: 1px;
+	padding-right: 5px;
+	padding-left: 5px;
+	float: left;
+	height: auto;
+	background-clip: content-box;
+}
+
+table{
+	margin: auto;
+  border: 1px solid black;
+  margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+table td{
+	border: 1px solid gray;
+}

@@ -1,6 +1,87 @@
+.item-price{
+	font-weight: bold;
+}
+
+#origin-input{
+	width: 90%;
+    padding: 5px;
+    margin: 11px;
+    border-radius: 3px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 32px;
+    line-height: 20px;
+	color: white !important;
+	font-family: 'Condiment', cursive;
+	text-decoration: none;
+}
+
+
+.navbar-nav>li>a{
+	text-decoration: none;
+}
+
+input{
+	color: black;
+	border-radius: 3px;
+}
+
+article {
+	backgorund-color: lightgray;
+}
+
+.item-call-now{
+	text-align: center;
+    padding: 6px 5px 0 5px;
+    color: darkslategrey;
+	background-color: lightgray;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin: 7px 3px 2px;
+}
+
+.item-call-now p{
+    color: darkslategrey;
+}
+
+.item-header{
+	background-color: black;
+    border-radius: 3px;
+    margin: 2px;
+    margin-top: 1px;
+}
+
+.item-description{
+	background-color: lightgray;
+    border: 3px solid black;
+    border-radius: 3px;
+    margin: 7px 3px 2px;
+	padding: 5px;
+}
+
+.item-description p{
+    color: darkslategrey;
+}
+
+.item-picture{
+    border-radius: 3px;
+    border-color: black;
+    background-color: black;
+    padding: 3px;
+    margin: 7px 1px 2px;
+}
+
+.item-picture img{
+	width: 100%; 
+	height: 100%;
+}
 
 h2 {
-	//color: black;
+	color: black;
 	font-family: 'Raleway',sans-serif;
 	font-size: 22px;
 	font-weight: 800;
@@ -12,39 +93,39 @@ h2 {
 
 
 p {
-	//color: darkgrey;
+	color: black;
 	font-family: 'Raleway',sans-serif;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 26px;
 }
 
+
+a { color: darkgrey; text-decoration: underline; }
+
+
+a:hover { color: #1c1c1c; text-decoration: underline; }
+
 .item{
 	margin: 3px;
 	background-color: white;
 	border: 2px solid black;
 	border-radius: 3px;
+	padding: 10px;
 }
 
 .item-header{
-	background-color: black;
-	color: white;
-}
-.item-description{
-	text-align: center;
+	background-color: lightgray;
 }
 
-img{
-	padding: 0 6px;
-	float: left;
-	width: 24.99999%;
-
+.navbar.navbar-inverse.navbar-fixed-top{
+	padding: 0;
 }
 
 .label{
 	display: block !important;
 	margin: 10px !important;
-	padding: 5px !important;
+    padding: 5px !important;
 }
 
 .hidden{
@@ -52,32 +133,27 @@ img{
 }
 
 body {
-	background-color: white;
+    background-image: url("../img/curtains.jpg");
+    background-color: #cccccc;
 }
 
 nav{
-	background-color: black;
-}
-.navbar{
-	background-color:black;
-}
-.navbar-brand{
-	color: white;
-	font-size: 3vw;
-	font-family: 'Condiment', cursive;
-}
-#origin-input{
-	width: 100%;
+	background-color: transparent !important;
+	border: 0 !important;
 }
 
 main.container{
-		margin-top: 70px;
-		min-height: 90vh;
+	border-radius: 5px;
 }
 
 header nav .container{
-	background-color: black;
-	color: white;
+	background-color:  #660000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+main.container{
+	margin-top: 30px;
 }
 
 article{
@@ -86,20 +162,19 @@ article{
 
 .formattedTextBox {
 	width: 98%;
-	border: 1px solid black;
-	min-height: 10px;
-	padding: 10px;
-	margin: 10px 1% 10px 1%;
+    border: 1px solid black;
+    min-height: 10px;
+    padding: 10px;
+    margin: 10px 1% 10px 1%;
 }
 
+/* added by Isaac */
 .searchedTextBox{
 	width: 80%;
-	min-height: 40px;
-}
-
-.btn{
-	width: 15%;
-	min-height: 40px;
+		border: 1px solid black;
+		min-height: 10px;
+		padding: 10px;
+		margin: 10px 1% 10px 1%;
 }
 
 .table-striped{
@@ -107,23 +182,37 @@ article{
 	width:100%;
 	border:3px black solid;
 }
+
+#dropZone{
+	background-color: transparent;
+	height:150px;
+	width:600px;
+	padding:0;
+	border: 2px black dashed;
+}
+
+input[type='file'] {
+	width:100%;
+	height:100%;
+}
+
 /* end by Isaac */
 
 .leftButton {
 	margin: 5px !important;
-	width: 100% !important;
-	margin-left: 0 !important;
+    width: 100% !important;
+    margin-left: 0 !important;
 }
 
 .rightButton{
 	margin: 5px !important;
-	width: 100% !important;
-	margin-right: 0 !important;
+    width: 100% !important;
+    margin-right: 0 !important;
 }
 
 .centeredButton{
 	margin-top: 5px;
-	width: 100% !important;
+    width: 100% !important;
 }
 
 .row10px{
@@ -133,21 +222,46 @@ article{
 
 
 * {
-	box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+#textbox{
+	width: 98%;
+    border: 1px solid black;
+    min-height: 100px;
+    padding: 10px;
+    margin: 10px 1% 10px 1%;
 }
 
 #map{
-	width: 100%;
-	border: 1px solid black;
-	min-height: 500px;
+	width: 98%;
+    border: 1px solid black;
+    min-height: 500px;
+    padding: 10px;
+    margin: 10px 1% 10px 1%;
+}
+
+body{
+	background-color: lightblue;
+	text-align: center;
+	padding: 15px;
+}
+
+header, footer{
+	padding: 10px;
 }
 
 nav, main, section
 {
 	padding: 10px;
-	background-color: black;
+	background-color:  #660000;
 }
 
+nav, article{
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: darkgrey;
+}
 
 figure{
 	background-color: mediumslateblue;
@@ -155,7 +269,7 @@ figure{
 }
 
 ul{
-	list-style-type: none;
+	 list-style-type: none;
 }
 
 .left{
@@ -197,8 +311,8 @@ figure img{
 
 table{
 	margin: auto;
-	border: 1px solid black;
-	margin-top: 15px;
+  border: 1px solid black;
+  margin-top: 15px;
 	margin-bottom: 10px;
 }
 
