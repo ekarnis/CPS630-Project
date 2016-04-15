@@ -39,7 +39,7 @@ article {
     padding: 6px 5px 0 5px;
     color: darkslategrey;
 	background-color: lightgray;
-    border: 3px solid black;
+    
     border-radius: 3px;
     margin: 7px 3px 2px;
 }
@@ -50,14 +50,12 @@ article {
 
 .item-header{
 	background-color: black;
-    border-radius: 3px;
     margin: 2px;
     margin-top: 1px;
 }
 
 .item-description{
 	background-color: lightgray;
-    border: 3px solid black;
     border-radius: 3px;
     margin: 7px 3px 2px;
 	padding: 5px;
@@ -68,8 +66,7 @@ article {
 }
 
 .item-picture{
-    border-radius: 3px;
-    border-color: black;
+
     background-color: black;
     padding: 3px;
     margin: 7px 1px 2px;
