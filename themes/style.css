@@ -133,8 +133,8 @@ a:hover { color: #1c1c1c; text-decoration: underline; }
 }
 
 body {
-    background-image: url("../img/curtains.jpg");
-    background-color: #cccccc;
+    /*background-image: url("../img/curtains.jpg");
+    */background-color: white;
 }
 
 nav{
@@ -242,7 +242,7 @@ input[type='file'] {
 }
 
 body{
-	background-color: lightblue;
+	background-color: white;
 	text-align: center;
 	padding: 15px;
 }

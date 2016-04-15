@@ -67,9 +67,9 @@ function populateinstitutions(){
       url: 'inventory.php'
 		});
 		institution_list.push({
-			lat: 43.6629,
-			lon: -79.3957,
-			title: "University of Toronto",
+			lat: 43.9453,
+			lon: -78.9314,
+			title: "University of Ontario Institute of Technology",
       url: 'inventory.php'
 		});
 		institution_list.push({
@@ -96,8 +96,27 @@ function populateinstitutions(){
 			title: "OCAD University",
       url: 'inventory.php'
 		});
+    institution_list.push({
+			lat: 43.8353,
+			lon: -79.6298,
+			title: "Meadowvale Theatre",
+      url: 'inventory.php'
+		});
+    institution_list.push({
+			lat: 43.6958,
+			lon: -79.4137,
+			title: "York University Glendon Campus",
+      url: 'inventory.php'
+		});
+    institution_list.push({
+			lat: 43.7765,
+			lon: -79.8856,
+			title: "Centennial College",
+      url: 'inventory.php'
+		});
 
-	for(count = 0; count < institution_list.length; count++){    add_institution_marker(institution_list[count].lat, institution_list[count].lon, institution_list[count].title, institution_list[count].url);
+	for(count = 0; count < institution_list.length; count++){    
+    add_institution_marker(institution_list[count].lat, institution_list[count].lon, institution_list[count].title, institution_list[count].url);
   }
 }
 }
