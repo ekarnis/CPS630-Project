@@ -46,6 +46,7 @@ $(document).on("click", "#done-button", function(){
             itemdescription: $("#item-description-field").val(),
             itemprice: $("#item-price-field").val(),
             itemdate:  $("#item-date-field").val(),
+			itemimage: $("#item-image-field").serialize()
           },
     dataType: 'json',
     success: function (data) {

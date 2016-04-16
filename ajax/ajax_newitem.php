@@ -26,15 +26,18 @@
 				mysql_query("SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
 
 				//Fetch the line information
-				$query = "INSERT INTO Item (User_id,Category_id,Name,Description,Price)
-        values(2,1,".'"'.$selecteditemname.'","'.$selecteditemdescription.'",'.$selecteditemprice.')';
 
-				$result = mysql_query($query);
+				if(!isset($_COOKIE["LoggedInUser"]))
+				{
+					$query = "INSERT INTO Item (User_id,Category_id,Name,Description,Price)
+	        values(".$_COOKIE["LoggedInUser"].",1,'$selecteditemname','$selecteditemdescription','$selecteditemprice')";
+					$result = mysql_query($query);
 
-        if(!$result)
-        {
-          $message  = 'Invalid query: ' . mysql_error() . "\n";
-          $message .= 'Whole query: ' . $query;
-          die($message);
-        }
+	        if(!$result)
+	        {
+	          $message  = $_COOKIE["LoggedInUser"].'Invalid query: ' . mysql_error() . "\n";
+	          $message .= $_COOKIE["LoggedInUser"].'Whole query: ' . $query;
+	          die($message);
+	        }
+				}
 ?>

@@ -1,112 +1,101 @@
-<?php
-	////////////////////////
-	//Define Database///////
-	////////////////////////
-	$hostname = "45.40.164.18";
-	$username = "cps630";
-	$password = "DontEat123!";
-	$dbname = "cps630";
-
-	//Connecting to your database
-	$conn = mysqli_connect($hostname, $username, $password, $dbname) OR DIE ("Unable to connect to database! Please try again later.");
-	//mysql_select_db($dbname);
-	//Set Charset to UTF9
-	mysqli_query($conn, "SET NAMES 'utf8'");
-	mysqli_query($conn, "SET CHARACTER SET utf8");
-	mysqli_query($conn, "SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
-
-	$inventoryCount=0;
-	//Fetch the line information
-	$var = $_GET['searchitem'];
-
-	if($var != "")
-	{
-		$query = "SELECT user_id, Category_id, Name, Description, Price, Image FROM Item WHERE (Name LIKE '". "%" . "' '". $var . "' '". "%" . "') OR (Description LIKE '". "%" . "' '". $var . "' '". "%" . "')";
-	}
-	else
-	{
-		$query = "SELECT user_id, Category_id, Name, Description, Price, Image FROM Item";
-	}
-	$result = mysqli_query($conn, $query);
-	if ($result)
-	{
-		while($row = mysqli_fetch_array($result))
-		{
-			$name[$inventoryCount]				=	 $row["Name"];
-			$description[$inventoryCount]	=	 $row["Description"];
-			$price[$inventoryCount]			  =  $row["Price"];
-			$image[$inventoryCount] 			=  $row["Image"];
-			$inventoryCount++;
-		}
-	}
-?>
 <?php include("header.php");?>
+
 <main class="container" id="link_1">
 	<article class="col-xs-12">
 		<form class="search_form">
-			<input type="textbox" name="searchitem" class="searchedTextBox" placeholder="Search Item...">
-			<button type="submit" class="btn btn-default" onclick="searchItem">Search</button>
+			<input type="textbox" id="searchitem" class="searchedTextBox" placeholder="Search Item...">
 		</form>
+	
+		<div id="loading-indicator" style="width: 100%; background-color: white; border: 2px solid gray; border-radius: 3px;">
+			<img id="#loading-indicator" src="img/ajax-loader.gif" id="loading-indicator"/>		
+		</div>
 
-		<div class="row">
-<?php
-			for ( $x = 0; $x < $inventoryCount; $x++)
-			{
-				echo "<div class='col-md-6 col-sm-12'>";
-					echo "<div class='item row'>";
-							
-							echo "<div class='item-header'>";
-								echo "<h2>". $name[$x]."</h2>";
-							echo "</div>";
-							
-							echo "<div class='row'>";
-								
-								echo "<div class='col-xs-4'>"; 
-									echo "<div class='item-picture'>"; 
-										echo "<img src='img/".$image[$x].".jpg' alt='". $x ."'>"; 
-									echo "</div>"; 
-								echo "</div>"; 
-								
-								echo "<div class='col-xs-8'>"; 
-									echo "<div class='item-description'>";
-										echo "<p>". $description[$x]."</p>";
-										echo "<p class='item-price'>$". $price[$x]."</p>";
-									echo "</div>";
-									
-									echo "<div class='item-call-now'>";
-										echo "<p>Call Now: (416)-887-2369</p>";
-									echo "</div>";
-								echo "</div>"; 
-								
-							echo "</div>";
-							
-		
-						echo "</div>";	
-				echo "</div>";
-			}
-?>
+		<div class="grid">
+			<div class='item grid-sizer hidden'>
+			</div>
 		</div>
 	</article>
+	
 </main>
 <?php include("footer.php");?>
 <!-- Local Javascript -->
  <script>
- 
-	function searchItem(){
-		if (str!="") {
-			if (window.XMLHttpRequest) {
-					// code for IE7+, Firefox, Chrome, Opera, Safari
-					xmlhttp=new XMLHttpRequest();
-				} else { // code for IE6, IE5
-						xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-				}
-				xmlhttp.onreadystatechange=function() {
-					if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-						document.getElementByName("searchitem").innerHTML = xmlhttp.responseText;
+	function loadItems(searchVal){
+		$("#loading-indicator").removeClass("hidden");
+
+		console.log(searchVal);
+		
+		$.ajax({
+		type: 'POST',
+		url: 'ajax/ajax_loaditem.php',
+		data: { searchtext: searchVal, myitemsonly: null},
+		dataType: 'json',
+		success: function (data) {
+				$("#loading-indicator").addClass("hidden");
+				
+				if(data.itemCount > 0)
+				{
+					var node = "<div class='item grid-sizer hidden'></div>";
+					
+					//Clean Up the current div
+					$(".grid").html(node);
+					
+					for(var i = 0; i < data.itemCount; i++){
+						node += "<div class='item grid-item'>";
+
+						node += "<div class='item-header'>";
+						node += "<h2>" + data.itemName[i] + "</h2>";
+						node += "</div>";
+
+						node += "<div class='row'>";
+
+						node += "<div class='col-xs-5'>"; 
+						node += "<div class='item-picture'>"; 
+						node += "<img src='img/" + data.itemImageLocation[i] + ".jpg' alt='"+ i +"'>"; 
+						node += "</div>"; 
+						node += "</div>"; 
+
+						node += "<div class='col-xs-7'>"; 
+						node += "<div class='item-description'>";
+						node += "<p>" + data.itemDescription[i] + "</p>";
+						node += "<p class='item-price'>$"+ data.itemPrice[i] +"</p>";
+						node += "</div>";
+
+						node += "<div class='item-call-now'>";
+						node += "<p>Call Now: (416)-887-2369</p>";
+						node += "</div>";
+						node += "</div>"; 
+
+						node += "</div>";
+						node += "</div>";		
 					}
+				
+					$(".grid").html(node);
+					
+					//Initialize Isotope Library
+					$('.grid').isotope({
+						  itemSelector: '.grid-item',
+						  masonry: {
+							columnWidth: '.grid-sizer',
+							isFitWidth: true
+						  }
+					});		
 				}
-				xmlhttp.open("GET","inventory.php?q="+str,true);
-				xmlhttp.send();
-		}
+				else
+				{
+					$('.grid').html("<div class='col-xs-12 label label-warning'>No Results Found</div>");
+				}
+			}
+		});
 	}
+ 
+	(function(){
+		$(document).on("change keydown", "#searchitem", function(){
+			loadItems($(this).val());
+		});
+		
+		$(document).ready(function(){	
+			loadItems("");
+		});
+	})();
  </script>

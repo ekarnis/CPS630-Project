@@ -1,5 +1,3 @@
-
-
 <?php include("header.php");?>
 
 <main class="container" id="link_1">

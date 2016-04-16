@@ -46,6 +46,8 @@
 					$("#login-success-div").closest("article").removeClass("hidden");
 					$("#login-success-div").removeClass("hidden");
 					$("#login-success-div").text("Logged In!");
+					
+					$(location).attr('href', 'index.php')
 				}
 				else
 				{

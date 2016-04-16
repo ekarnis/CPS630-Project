@@ -1,5 +1,20 @@
 <?php
+///////////////////////
+//Logged In User///////
+///////////////////////
 
+$isCookieSet = false;
+
+if (strpos($_SERVER['REQUEST_URI'], "login") == false && strpos($_SERVER['REQUEST_URI'], "signup") == false  && strpos($_SERVER['REQUEST_URI'], "logout") == false){
+	if(!isset($_COOKIE["LoggedInUser"])) {
+		header("Location: login.php");
+		die();
+	}
+}
+
+if(isset($_COOKIE["LoggedInUser"])) {
+	$isCookieSet = true;
+}
 
 ////////////////////////
 //Define Database///////
@@ -19,7 +34,7 @@ mysqli_query($conn, "SET CHARACTER SET utf8");
 mysqli_query($conn, "SET COLLATION_CONNECTION = 'utf8_unicode_ci'");
 
 //Fetch the line information
-$query = "Select User_Id, Login as 'username', Pass from Login";
+$query = "Select User_Id, User.Name from Login inner join User on Login.User_id = User.`Key` Where User.Key = ".$_COOKIE["LoggedInUser"]."";
 
 $result = mysqli_query($conn, $query);
 
@@ -29,15 +44,11 @@ if ($result)
 {
 	while($row = mysqli_fetch_array($result))
 	{
-		$userId[$headerCount]			=  $row["User_Id"];
-		$usernames[$headerCount] 	=	 $row["username"];
-		$pass[$headerCount]			  =  $row["Pass"];
-		$headerCount++;
+		$userId[$headerCount]		=  	$row["User_Id"];
+		$usernames[$headerCount] 	=   $row["Name"];
 	}
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -54,12 +65,21 @@ if ($result)
 	<!-- CDN Hosted Bootstrap -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
+	
+    <script type="text/javascript" src="script/isotope.js"></script>
+	
 	<link href="themes\style.css" rel="stylesheet" type="text/css">
 	<link href='https://fonts.googleapis.com/css?family=Condiment' rel='stylesheet' type='text/css'>
-
+	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif' rel='stylesheet' type='text/css'>
 </head>
 
+<?php
+	if($isCookieSet)
+	{
+?>
 <body>
 	<header>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -82,7 +102,7 @@ if ($result)
 
 					<!-- RIGHT SIDE -->
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="login.php">Login/Signup</a></li>
+						<li><a href="myinventory.php"><?php echo $usernames[0] ?></a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -97,3 +117,34 @@ if ($result)
 			</div>
 		</nav>
 	</header>
+<?php
+	}
+	else
+	{
+?>
+	<body>
+	<header>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">PropSwap</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<!-- lEFT SIDE -->
+					<ul class="nav navbar-nav">
+						<li><a href="login.php">Please Signup or Login</a></li><li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+<?php
+	}
+?>
